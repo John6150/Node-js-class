@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus necessitatibus maxime enim assumenda,
+        praesentium quibusdam!</p>
+    <h1>
+        <%= name %>
+    </h1>
+    <% if (gender=='male') { %>
+        <p>You are a male</p>
+        <% }else{ %>
+            <p>You are a male</p>
+            <% } %>
+
+            <form action="/post" method="post">
+                <input type="text" placeholder="name" name="name"><br>
+                <input type="text" placeholder="Email" name="email"><br>
+                <button type="submit">Add</button>
+            </form>
+
+          <% ar.forEach((element, index) => { %>
+           <h1><%= element.name %></h1>
+           <h1><%= element.email %></h1>
+           <form action="/delete/<%=index%>" method="post">
+            <button name="delete" type="submit">Delete</button>
+           </form>
+           <form action="/edit/<%=index%>" method="post">
+            <button name="edit" type="submit">Edit</button>
+           </form>
+          <% }) %>
+
+</body>
+
+</html>
